@@ -40,6 +40,8 @@ void recFindLetter(char letter, char* dir_path){
 
 int main(){
 
+    freopen("result.txt", "w", stdout);
+
     char str[MAX_WORD_LEN];
     fgets(str, MAX_WORD_LEN, stdin);
 

@@ -41,17 +41,23 @@ void recFindLetter(char letter, char* dir_path){
 int main(){
 
     freopen("result.txt", "w", stdout);
+    int words_count;
+    scanf("%d", &words_count);
 
-    char str[MAX_WORD_LEN];
-    fgets(str, MAX_WORD_LEN, stdin);
+    for(int i=0; i<words_count; i++){
 
-    DIR* dir = opendir("tmp");
-    if (!dir){
-        printf("Error in open directory\n");
-    }
+        char str[MAX_WORD_LEN];
+        scanf("%s", str);
 
-    for (int i=0; str[i]; i++){
-        recFindLetter(str[i], "tmp");
+        DIR* dir = opendir("tmp");
+        if (!dir){
+            printf("Error in open directory\n");
+        }
+
+        for (int i=0; str[i]; i++){
+            recFindLetter(str[i], "tmp");
+        }
+
     }
 
     return 0;
